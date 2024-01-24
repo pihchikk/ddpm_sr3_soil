@@ -1,0 +1,1 @@
+python data/prepare_data.py  --path [dataset root]  --out [output root] --size 16,128 -l

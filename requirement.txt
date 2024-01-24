@@ -1,0 +1,25 @@
+torch
+torchvision
+numpy
+pandas
+tqdm
+lmdb
+opencv-python
+pillow
+tensorboardx
+wandb
+
+python sr.py -p train -c config/MedSoilCT.json
+python sr.py -p val -c config/soilCT_default.json
+python eval.py -p dataset/soilCT_validation
+python infer.py -c config/soilCT_inference.json
+
+python sr.py -p train -c config/decimation.json
+
+python data/prepare_data.py  --path eval_imgs  --out eval_imgs2 --size 64,256 -l
+
+
+python eval.py -p dataset/soilCT_validation
+
+
+python sr.py -p val -c config/MED_inf.json
